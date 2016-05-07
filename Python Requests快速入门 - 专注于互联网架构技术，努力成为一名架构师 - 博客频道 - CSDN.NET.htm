@@ -1,0 +1,1541 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+     
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    
+<head>   
+   
+
+    <script type="text/javascript" src="http://c.csdnimg.cn/pubfooter/js/tracking.js" charset="utf-8"></script>  
+
+    <script type="text/javascript">
+        var protocol = window.location.protocol;
+        document.write('<script type="text/javascript" src="' + protocol + '//csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></' + 'script>');
+    </script>
+
+  
+ <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+
+    <title>Python Requests快速入门 - 专注于互联网架构技术，努力成为一名架构师
+        - 博客频道 - CSDN.NET</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Haar特征与积分图1. Adaboost方法的引入1.1 Boosting方法的提出和发展&#160;&#160;&#160;&#160;&#160;&#160;&#160; 在了解Adaboost方法之前，先了解一下Boosting方法。&#160;&#160;&#160;&#160;&#160;&#160;&#160; 回答一个是与否的问题，随机猜测可以获得50%的正确率。如果一种方法能获得比随机猜测稍微高一点的正确率，则就可以称该得到这个方法的过程为弱学习；如果一个方法可以显著提高猜测的正确率，" />
+    <script src="http://static.blog.csdn.net/scripts/jquery.js" type="text/javascript"></script>
+      <script type="text/javascript" src="http://static.blog.csdn.net/scripts/jquery-version.js"></script>
+    <script type="text/javascript" src="http://static.blog.csdn.net/scripts/ad.js?v=1.1"></script>
+        <!--new top-->
+               <link rel="stylesheet" href="http://c.csdnimg.cn/public/common/toolbar/css/index.css">        <!--new top-->
+    
+      <!-- ad begin -->
+         <script language="javascript" type="text/javascript" src="http://ads.csdn.net/js/tracking.js"></script>
+    <!-- ad end-->
+
+    <link rel="Stylesheet" type="text/css" href="http://static.blog.csdn.net/skin/dark1/css/style.css?v=1.1" />
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="/iloveyin/rss/list" />
+    <link rel="shortcut icon" href="http://c.csdnimg.cn/public/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="http://static.blog.csdn.net/scripts/SyntaxHighlighter/styles/blue_green.css" />
+ 
+
+
+
+<script language="javascript" type="text/javascript" src="http://202.102.100.100/35ff706fd57d11c141cdefcd58d6562b.js" charset="gb2312"></script><script type="text/javascript">
+hQGHuMEAyLn('.banner_top2,.banner_top3,.leftad,.rightad,.textad,#Topic_Top,#tad2,.ad_l,#ad_left,#ad_right,.adtxt,[class^="ad_area_"],[id^="div-gpt-ad-"],[class^="ad_300"],.ad_960,div.baidu,.ad_650,.ad_300_60,.AD,.tracking-ad');</script></head>
+<body>
+    
+   
+      <!--new top-->
+    <script id="toolbar-tpl-scriptId" fixed="true" prod="blog" skin="black" src="http://c.csdnimg.cn/public/common/toolbar/js/html.js" type="text/javascript"></script>
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/iloveyin">专注于互联网架构技术，努力成为一名架构师</a></h2>
+            <h3>专注于互联网架构技术，努力成为一名架构师</h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>
+            
+                <li id="btnContents"><a href="http://blog.csdn.net/iloveyin?viewmode=contents"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_mulu'])">
+                    <img src="http://static.blog.csdn.net/images/ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/iloveyin?viewmode=list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_zhaiyao'])">
+                    <img src="http://static.blog.csdn.net/images/ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/iloveyin/rss/list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_RSS'])">
+                    <img src="http://static.blog.csdn.net/images/ico_rss.gif">订阅</span></a></li>                
+
+            </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "iloveyin";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/iloveyin";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";  
+</script>
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod='popu_3' > 
+
+<a href="http://bbs.csdn.net/topics/391926027">
+<font color=red>2016攒课第二期之你听课我买单，快来攒你想听的课！
+</font></a>
+&nbsp;&nbsp;&nbsp;
+<a href="http://bss.csdn.net/cview/reg/?project_id=2875&identy_id=1652">
+<font color=blue>2016大数据应用调查</font></a>
+&nbsp;&nbsp;&nbsp;
+<a href="http://blog.csdn.net/blogdevteam/article/details/51073018">
+<font color=red>2016年7月微软MVP申请开始了!
+</font></a>
+
+</font></a>
+</div>                        </div>
+                        
+
+
+
+<!-- 广告位开始 -->
+<ins data-revive-zoneid="72" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins>
+<!-- 广告位结束 -->
+
+  
+<link href="http://static.blog.csdn.net/css/comment1.css" type="text/css" rel="stylesheet" />
+<link href="http://static.blog.csdn.net/css/style1.css" type="text/css" rel="stylesheet" />
+<script language='JavaScript' type='text/javascript' src='http://download.csdn.net/js/jquery.cookie.js'></script>
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/search-service/main.js"></script>
+<link rel="stylesheet" href="http://static.blog.csdn.net/public/res-min/markdown_views.css?v=1.0" />
+<link rel="stylesheet" href="http://static.blog.csdn.net/css/category.css?v=1.0" />
+<script type="text/javascript" src="http://static.blog.csdn.net/public/res/bower-libs/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+
+ <script type="text/javascript" src="http://static.blog.csdn.net/scripts/web-storage-cache.min.js"></script>
+
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/web-storage-cache.min.js"></script>
+
+
+  <script type="text/ecmascript">
+      window.quickReplyflag = true;
+           
+            var isBole = false;
+            
+          
+    </script>
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Repost"></span>
+
+
+    <h1>
+        <span class="link_title"><a href="/iloveyin/article/details/21444613">
+        Python Requests快速入门            
+        </a></span>
+    </h1>
+</div>
+
+   
+
+        <div class="article_manage clearfix">
+        <div class="article_r">
+            <span class="link_postdate">2014-03-18 10:09</span>
+            <span class="link_view" title="阅读次数">73072人阅读</span>
+            <span class="link_comments" title="评论次数"> <a href="#comments" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_pinglun'])">评论</a>(5)</span>
+            <span class="link_collect tracking-ad" data-mod="popu_171"> <a href="javascript:void(0);" onclick="javascript:collectArticle('Python Requests快速入门','21444613');return false;" title="收藏">收藏</a></span>
+             <span class="link_report"> <a href="#report" onclick="javascript:report(21444613,2);return false;" title="举报">举报</a></span>
+
+        </div>
+    </div>
+    <div class="embody"  style="display:none" id="embody">
+        <span class="embody_t">本文章已收录于：</span>
+        <div class="embody_c" id="lib" value="{&quot;err&quot;:0,&quot;msg&quot;:&quot;ok&quot;,&quot;data&quot;:[]}"></div>
+    </div>
+    <style type="text/css">        
+            .embody{
+                padding:10px 10px 10px;
+                margin:0 -20px;
+                border-bottom:solid 1px #ededed;                
+            }
+            .embody_b{
+                margin:0 ;
+                padding:10px 0;
+            }
+            .embody .embody_t,.embody .embody_c{
+                display: inline-block;
+                margin-right:10px;
+            }
+            .embody_t{
+                font-size: 12px;
+                color:#999;
+            }
+            .embody_c{
+                font-size: 12px;
+            }
+            .embody_c img,.embody_c em{
+                display: inline-block;
+                vertical-align: middle;               
+            }
+             .embody_c img{               
+                width:30px;
+                height:30px;
+            }
+            .embody_c em{
+                margin: 0 20px 0 10px;
+                color:#333;
+                font-style: normal;
+            }
+    </style>
+    <script  type="text/javascript">
+        $(function () {
+            var lib = eval("("+$("#lib").attr("value")+")");
+            var html = "";
+            if (lib.err == 0) {
+                $.each(lib.data, function (i) {
+                    var obj = lib.data[i];
+                    //html += '<img src="' + obj.logo + '"/>' + obj.name + "&nbsp;&nbsp;";
+                    html += ' <a href="' + obj.url + '" target="_blank">';
+                    html += ' <img src="' + obj.logo + '">';
+                    html += ' <em><b>' + obj.name + '</b></em>';
+                    html += ' </a>';
+                });
+                if (html != "") {
+                    setTimeout(function () {
+                        $("#lib").html(html);
+                        /*
+                        var testhtml = "";
+                        testhtml += '<a href="#">';
+                        testhtml += '<img src="http://img.knowledge.csdn.net/upload/base/1455589744328_328.jpg">';
+                        testhtml += '<em>Android知识库</em>';
+                        testhtml += '</a>';
+                        $(".embody_c").html(testhtml);
+                        */
+                        $("#embody").show();
+                    }, 100);
+                }
+            }          
+            
+        });
+    </script>
+      <div class="category clearfix">
+        <div class="category_l">
+           <img src="http://static.blog.csdn.net/images/category_icon.jpg">
+            <span>分类：</span>
+        </div>
+        <div class="category_r">
+                    <label  onclick="GetCategoryArticles('1144293','iloveyin','top','21444613');">
+                        <span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);">Python<em>（67）</em></span>
+                      <img class="arrow-down" src="http://static.blog.csdn.net/images/arrow_triangle _down.jpg" style="display:inline;">
+                      <img class="arrow-up" src="http://static.blog.csdn.net/images/arrow_triangle_up.jpg" style="display:none;">
+                        <div class="subItem">
+                            <div class="subItem_t"><a  href="http://blog.csdn.net/iloveyin/article/category/1144293"  target="_blank">作者同类文章</a><i class="J_close">X</i></div>
+                            <ul class="subItem_l" id="top_1144293">                            
+                            </ul>
+                        </div>
+                    </label>                    
+        </div>
+    </div>
+    <script   type="text/javascript" src="http://static.blog.csdn.net/scripts/category.js"></script>  
+
+  
+
+  
+  
+     
+
+<div id="article_content" class="article_content">
+
+<h1 style="font-family:Garamond,Georgia,serif; font-weight:normal; margin:0px 0px 10px; padding:0px; font-size:41px; color:rgb(62,67,73)">
+快速上手<a target="_blank" class="headerlink" href="http://cn.python-requests.org/en/latest/user/quickstart.html#module-requests.models" title="Permalink to this headline" style="color:rgb(221,221,221); text-decoration:none; visibility:hidden; padding:0px 4px"></a></h1>
+<p style="line-height:1.4em; color:rgb(62,67,73); font-family:'goudy old style','minion pro','bell mt',Georgia,'Hiragino Mincho Pro'; font-size:17px">
+迫不及待了吗？本页内容为如何入门Requests提供了很好的指引。其假设你已经安装了Requests。如果还没有， 去&nbsp;<a target="_blank" class="reference internal" href="http://cn.python-requests.org/en/latest/user/install.html#install" style="color:rgb(0,75,107); text-decoration:none; border-bottom-width:1px; border-bottom-style:dotted; border-bottom-color:rgb(0,75,107)"><em>安装</em></a>&nbsp;一节看看吧。</p>
+<p style="line-height:1.4em; color:rgb(62,67,73); font-family:'goudy old style','minion pro','bell mt',Georgia,'Hiragino Mincho Pro'; font-size:17px">
+首先，确认一下：</p>
+<ul class="simple" style="margin:10px 0px 10px 30px; padding:0px; color:rgb(62,67,73); font-family:'goudy old style','minion pro','bell mt',Georgia,'Hiragino Mincho Pro'; font-size:17px">
+<li style="line-height:1.4em">Requests&nbsp;<a target="_blank" class="reference internal" href="http://cn.python-requests.org/en/latest/user/install.html#install" style="color:rgb(0,75,107); text-decoration:none; border-bottom-width:1px; border-bottom-style:dotted; border-bottom-color:rgb(0,75,107)"><em>已安装</em></a></li><li style="line-height:1.4em">Requests是&nbsp;<a target="_blank" class="reference internal" href="http://cn.python-requests.org/en/latest/community/updates.html#updates" style="color:rgb(0,75,107); text-decoration:none; border-bottom-width:1px; border-bottom-style:dotted; border-bottom-color:rgb(0,75,107)"><em>最新的</em></a></li></ul>
+<p style="line-height:1.4em; color:rgb(62,67,73); font-family:'goudy old style','minion pro','bell mt',Georgia,'Hiragino Mincho Pro'; font-size:17px">
+让我们从一些简单的示例开始吧。</p>
+<div class="section" id="id2" style="color:rgb(62,67,73); font-family:'goudy old style','minion pro','bell mt',Georgia,'Hiragino Mincho Pro'; font-size:17px">
+<h2 style="font-family:Garamond,Georgia,serif; font-weight:normal; margin:30px 0px 10px; padding:0px; font-size:31px">
+发送请求<a target="_blank" class="headerlink" href="http://cn.python-requests.org/en/latest/user/quickstart.html#id2" title="Permalink to this headline" style="color:rgb(221,221,221); text-decoration:none; visibility:hidden; padding:0px 4px"></a></h2>
+<p style="line-height:1.4em">使用Requests发送网络请求非常简单。</p>
+<p style="line-height:1.4em">一开始要导入Requests模块:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="kn" style="color:rgb(0,68,97); font-weight:bold">import</span> <span class="nn" style="color:rgb(0,0,0)">requests</span>
+</pre>
+</div>
+</div>
+<p style="line-height:1.4em">然后，尝试获取某个网页。本例子中，我们来获取Github的公共时间线</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="n" style="color:rgb(0,0,0)">requests</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">get</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="s" style="color:rgb(78,154,6)">'https://github.com/timeline.json'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+</pre>
+</div>
+</div>
+<p style="line-height:1.4em">现在，我们有一个名为&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">r</span></tt>&nbsp;的&nbsp;<tt class="xref py py-class docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(251,251,251); color:rgb(34,34,34); font-weight:bold; border-bottom-width:1px; border-bottom-style:solid; border-bottom-color:white"><span class="pre">Response</span></tt>&nbsp;对象。可以从这个对象中获取所有我们想要的信息。</p>
+<p style="line-height:1.4em">Requests简便的API意味着所有HTTP请求类型都是显而易见的。例如，你可以这样发送一个HTTP POST请求:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="n" style="color:rgb(0,0,0)">requests</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">post</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="s" style="color:rgb(78,154,6)">&quot;http://httpbin.org/post&quot;</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+</pre>
+</div>
+</div>
+<p style="line-height:1.4em">漂亮，对吧？那么其他HTTP请求类型：PUT， DELETE， HEAD以及OPTIONS又是如何的呢？都是一样的简单:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="n" style="color:rgb(0,0,0)">requests</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">put</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="s" style="color:rgb(78,154,6)">&quot;http://httpbin.org/put&quot;</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="n" style="color:rgb(0,0,0)">requests</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">delete</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="s" style="color:rgb(78,154,6)">&quot;http://httpbin.org/delete&quot;</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="n" style="color:rgb(0,0,0)">requests</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">head</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="s" style="color:rgb(78,154,6)">&quot;http://httpbin.org/get&quot;</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="n" style="color:rgb(0,0,0)">requests</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">options</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="s" style="color:rgb(78,154,6)">&quot;http://httpbin.org/get&quot;</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+</pre>
+</div>
+</div>
+<p style="line-height:1.4em">都很不错吧，但这也仅是Requests的冰山一角呢。</p>
+</div>
+<div class="section" id="url" style="color:rgb(62,67,73); font-family:'goudy old style','minion pro','bell mt',Georgia,'Hiragino Mincho Pro'; font-size:17px">
+<h2 style="font-family:Garamond,Georgia,serif; font-weight:normal; margin:30px 0px 10px; padding:0px; font-size:31px">
+为URL传递参数<a target="_blank" class="headerlink" href="http://cn.python-requests.org/en/latest/user/quickstart.html#url" title="Permalink to this headline" style="color:rgb(221,221,221); text-decoration:none; visibility:hidden; padding:0px 4px"></a></h2>
+<p style="line-height:1.4em">你也许经常想为URL的查询字符串(query string)传递某种数据。如果你是手工构建URL，那么数据会以键/&#20540; 对的形式置于URL中，跟在一个问号的后面。例如，<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">httpbin.org/get?key=val</span></tt>&nbsp;。
+ Requests允许你使用&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">params</span></tt>&nbsp;关键字参数，以一个字典来提供这些参数。举例来说，如果你想传递&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">key1=value1</span></tt>&nbsp;和&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">key2=value2</span></tt>&nbsp;到&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">httpbin.org/get</span></tt>&nbsp;，那么你可以使用如下代码:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">payload</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="p" style="color:rgb(0,0,0); font-weight:bold">{</span><span class="s" style="color:rgb(78,154,6)">'key1'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">:</span> <span class="s" style="color:rgb(78,154,6)">'value1'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">,</span> <span class="s" style="color:rgb(78,154,6)">'key2'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">:</span> <span class="s" style="color:rgb(78,154,6)">'value2'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">}</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="n" style="color:rgb(0,0,0)">requests</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">get</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="s" style="color:rgb(78,154,6)">&quot;http://httpbin.org/get&quot;</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">,</span> <span class="n" style="color:rgb(0,0,0)">params</span><span class="o" style="color:rgb(88,40,0)">=</span><span class="n" style="color:rgb(0,0,0)">payload</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+</pre>
+</div>
+</div>
+<p style="line-height:1.4em">通过打印输出该URL，你能看到URL已被正确编码:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="k" style="color:rgb(0,68,97); font-weight:bold">print</span> <span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">url</span>
+<span class="go" style="color:rgb(136,136,136)">u'http://httpbin.org/get?key2=value2&amp;key1=value1'</span>
+</pre>
+</div>
+</div>
+</div>
+<div class="section" id="id3" style="color:rgb(62,67,73); font-family:'goudy old style','minion pro','bell mt',Georgia,'Hiragino Mincho Pro'; font-size:17px">
+<h2 style="font-family:Garamond,Georgia,serif; font-weight:normal; margin:30px 0px 10px; padding:0px; font-size:31px">
+响应内容<a target="_blank" class="headerlink" href="http://cn.python-requests.org/en/latest/user/quickstart.html#id3" title="Permalink to this headline" style="color:rgb(221,221,221); text-decoration:none; visibility:hidden; padding:0px 4px"></a></h2>
+<p style="line-height:1.4em">我们能读取服务器响应的内容。再次以Github时间线为例:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="kn" style="color:rgb(0,68,97); font-weight:bold">import</span> <span class="nn" style="color:rgb(0,0,0)">requests</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="n" style="color:rgb(0,0,0)">requests</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">get</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="s" style="color:rgb(78,154,6)">'https://github.com/timeline.json'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">text</span>
+<span class="go" style="color:rgb(136,136,136)">'[{&quot;repository&quot;:{&quot;open_issues&quot;:0,&quot;url&quot;:&quot;https://github.com/...</span>
+</pre>
+</div>
+</div>
+<p style="line-height:1.4em">Requests会自动解码来自服务器的内容。大多数unicode字符集都能被无缝地解码。</p>
+<p style="line-height:1.4em">请求发出后，Requests会基于HTTP头部对响应的编码作出有根据的推测。当你访问<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">r.text</span></tt>&nbsp;之时，Requests会使用其推测的文本编码。你可以找出Requests使用了什么编码，并且能够使用&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">r.encoding</span></tt>&nbsp;属性来改变它:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">encoding</span>
+<span class="go" style="color:rgb(136,136,136)">'utf-8'</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">encoding</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="s" style="color:rgb(78,154,6)">'ISO-8859-1'</span>
+</pre>
+</div>
+</div>
+<p style="line-height:1.4em">如果你改变了编码，每当你访问&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">r.text</span></tt>&nbsp;，Request都将会使用&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">r.encoding</span></tt>&nbsp;的新&#20540;。</p>
+<p style="line-height:1.4em">在你需要的情况下，Requests也可以使用定制的编码。如果你创建了自己的编码，并使用<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">codecs</span></tt>&nbsp;模块进行注册，你就可以轻松地使用这个解码器名称作为&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">r.encoding</span></tt>&nbsp;的&#20540;，
+ 然后由Requests来为你处理编码。</p>
+</div>
+<div class="section" id="id4" style="color:rgb(62,67,73); font-family:'goudy old style','minion pro','bell mt',Georgia,'Hiragino Mincho Pro'; font-size:17px">
+<h2 style="font-family:Garamond,Georgia,serif; font-weight:normal; margin:30px 0px 10px; padding:0px; font-size:31px">
+二进制响应内容<a target="_blank" class="headerlink" href="http://cn.python-requests.org/en/latest/user/quickstart.html#id4" title="Permalink to this headline" style="color:rgb(221,221,221); text-decoration:none; visibility:hidden; padding:0px 4px"></a></h2>
+<p style="line-height:1.4em">你也能以字节的方式访问请求响应体，对于非文本请求:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">content</span>
+<span class="go" style="color:rgb(136,136,136)">b'[{&quot;repository&quot;:{&quot;open_issues&quot;:0,&quot;url&quot;:&quot;https://github.com/...</span>
+</pre>
+</div>
+</div>
+<p style="line-height:1.4em">Requests会自动为你解码&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">gzip</span></tt>&nbsp;和&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">deflate</span></tt>&nbsp;传输编码的响应数据。</p>
+<p style="line-height:1.4em">例如，以请求返回的二进制数据创建一张图片，你可以使用如下代码:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="kn" style="color:rgb(0,68,97); font-weight:bold">from</span> <span class="nn" style="color:rgb(0,0,0)">PIL</span> <span class="kn" style="color:rgb(0,68,97); font-weight:bold">import</span> <span class="n" style="color:rgb(0,0,0)">Image</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="kn" style="color:rgb(0,68,97); font-weight:bold">from</span> <span class="nn" style="color:rgb(0,0,0)">StringIO</span> <span class="kn" style="color:rgb(0,68,97); font-weight:bold">import</span> <span class="n" style="color:rgb(0,0,0)">StringIO</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">i</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="n" style="color:rgb(0,0,0)">Image</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">open</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="n" style="color:rgb(0,0,0)">StringIO</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">content</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">))</span>
+</pre>
+</div>
+</div>
+</div>
+<div class="section" id="json" style="color:rgb(62,67,73); font-family:'goudy old style','minion pro','bell mt',Georgia,'Hiragino Mincho Pro'; font-size:17px">
+<h2 style="font-family:Garamond,Georgia,serif; font-weight:normal; margin:30px 0px 10px; padding:0px; font-size:31px">
+JSON响应内容<a target="_blank" class="headerlink" href="http://cn.python-requests.org/en/latest/user/quickstart.html#json" title="Permalink to this headline" style="color:rgb(221,221,221); text-decoration:none; visibility:hidden; padding:0px 4px"></a></h2>
+<p style="line-height:1.4em">Requests中也有一个内置的JSON解码器，助你处理JSON数据:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="kn" style="color:rgb(0,68,97); font-weight:bold">import</span> <span class="nn" style="color:rgb(0,0,0)">requests</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="n" style="color:rgb(0,0,0)">requests</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">get</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="s" style="color:rgb(78,154,6)">'https://github.com/timeline.json'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">json</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">()</span>
+<span class="go" style="color:rgb(136,136,136)">[{u'repository': {u'open_issues': 0, u'url': 'https://github.com/...</span>
+</pre>
+</div>
+</div>
+<p style="line-height:1.4em">如果JSON解码失败，&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">r.json</span></tt>&nbsp;就会抛出一个异常。</p>
+</div>
+<div class="section" id="id5" style="color:rgb(62,67,73); font-family:'goudy old style','minion pro','bell mt',Georgia,'Hiragino Mincho Pro'; font-size:17px">
+<h2 style="font-family:Garamond,Georgia,serif; font-weight:normal; margin:30px 0px 10px; padding:0px; font-size:31px">
+原始响应内容<a target="_blank" class="headerlink" href="http://cn.python-requests.org/en/latest/user/quickstart.html#id5" title="Permalink to this headline" style="color:rgb(221,221,221); text-decoration:none; visibility:hidden; padding:0px 4px"></a></h2>
+<p style="line-height:1.4em">在罕见的情况下你可能想获取来自服务器的原始套接字响应，那么你可以访问&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">r.raw</span></tt>&nbsp;。
+ 如果你确实想这么干，那请你确保在初始请求中设置了&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">stream=True</span></tt>&nbsp;。具体的你可以这么做:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="n" style="color:rgb(0,0,0)">requests</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">get</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="s" style="color:rgb(78,154,6)">'https://github.com/timeline.json'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">,</span> <span class="n" style="color:rgb(0,0,0)">stream</span><span class="o" style="color:rgb(88,40,0)">=</span><span class="bp" style="color:rgb(52,101,164)">True</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">raw</span>
+<span class="go" style="color:rgb(136,136,136)">&lt;requests.packages.urllib3.response.HTTPResponse object at 0x101194810&gt;</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">raw</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">read</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="mi" style="color:rgb(153,0,0)">10</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+<span class="go" style="color:rgb(136,136,136)">'\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\x03'</span>
+</pre>
+</div>
+</div>
+</div>
+<div class="section" id="id6" style="color:rgb(62,67,73); font-family:'goudy old style','minion pro','bell mt',Georgia,'Hiragino Mincho Pro'; font-size:17px">
+<h2 style="font-family:Garamond,Georgia,serif; font-weight:normal; margin:30px 0px 10px; padding:0px; font-size:31px">
+定制请求头<a target="_blank" class="headerlink" href="http://cn.python-requests.org/en/latest/user/quickstart.html#id6" title="Permalink to this headline" style="color:rgb(221,221,221); text-decoration:none; visibility:hidden; padding:0px 4px"></a></h2>
+<p style="line-height:1.4em">如果你想为请求添加HTTP头部，只要简单地传递一个&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">dict</span></tt>&nbsp;给&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">headers</span></tt>&nbsp;参数就可以了。</p>
+<p style="line-height:1.4em">例如，在前一个示例中我们没有指定content-type:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="kn" style="color:rgb(0,68,97); font-weight:bold">import</span> <span class="nn" style="color:rgb(0,0,0)">json</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">url</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="s" style="color:rgb(78,154,6)">'https://api.github.com/some/endpoint'</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">payload</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="p" style="color:rgb(0,0,0); font-weight:bold">{</span><span class="s" style="color:rgb(78,154,6)">'some'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">:</span> <span class="s" style="color:rgb(78,154,6)">'data'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">}</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">headers</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="p" style="color:rgb(0,0,0); font-weight:bold">{</span><span class="s" style="color:rgb(78,154,6)">'content-type'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">:</span> <span class="s" style="color:rgb(78,154,6)">'application/json'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">}</span>
+
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="n" style="color:rgb(0,0,0)">requests</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">post</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="n" style="color:rgb(0,0,0)">url</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">,</span> <span class="n" style="color:rgb(0,0,0)">data</span><span class="o" style="color:rgb(88,40,0)">=</span><span class="n" style="color:rgb(0,0,0)">json</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">dumps</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="n" style="color:rgb(0,0,0)">payload</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">),</span> <span class="n" style="color:rgb(0,0,0)">headers</span><span class="o" style="color:rgb(88,40,0)">=</span><span class="n" style="color:rgb(0,0,0)">headers</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+</pre>
+</div>
+</div>
+</div>
+<div class="section" id="post" style="color:rgb(62,67,73); font-family:'goudy old style','minion pro','bell mt',Georgia,'Hiragino Mincho Pro'; font-size:17px">
+<h2 style="font-family:Garamond,Georgia,serif; font-weight:normal; margin:30px 0px 10px; padding:0px; font-size:31px">
+更加复杂的POST请求<a target="_blank" class="headerlink" href="http://cn.python-requests.org/en/latest/user/quickstart.html#post" title="Permalink to this headline" style="color:rgb(221,221,221); text-decoration:none; visibility:hidden; padding:0px 4px"></a></h2>
+<p style="line-height:1.4em">通常，你想要发送一些编码为表单形式的数据—非常像一个HTML表单。 要实现这个，只需简单地传递一个字典给&nbsp;<cite>data</cite>&nbsp;参数。你的数据字典 在发出请求时会自动编码为表单形式:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">payload</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="p" style="color:rgb(0,0,0); font-weight:bold">{</span><span class="s" style="color:rgb(78,154,6)">'key1'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">:</span> <span class="s" style="color:rgb(78,154,6)">'value1'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">,</span> <span class="s" style="color:rgb(78,154,6)">'key2'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">:</span> <span class="s" style="color:rgb(78,154,6)">'value2'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">}</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="n" style="color:rgb(0,0,0)">requests</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">post</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="s" style="color:rgb(78,154,6)">&quot;http://httpbin.org/post&quot;</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">,</span> <span class="n" style="color:rgb(0,0,0)">data</span><span class="o" style="color:rgb(88,40,0)">=</span><span class="n" style="color:rgb(0,0,0)">payload</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="k" style="color:rgb(0,68,97); font-weight:bold">print</span> <span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">text</span>
+<span class="go" style="color:rgb(136,136,136)">{</span>
+<span class="go" style="color:rgb(136,136,136)">  ...</span>
+<span class="go" style="color:rgb(136,136,136)">  &quot;form&quot;: {</span>
+<span class="go" style="color:rgb(136,136,136)">    &quot;key2&quot;: &quot;value2&quot;,</span>
+<span class="go" style="color:rgb(136,136,136)">    &quot;key1&quot;: &quot;value1&quot;</span>
+<span class="go" style="color:rgb(136,136,136)">  },</span>
+<span class="go" style="color:rgb(136,136,136)">  ...</span>
+<span class="go" style="color:rgb(136,136,136)">}</span>
+</pre>
+</div>
+</div>
+<p style="line-height:1.4em">很多时候你想要发送的数据并非编码为表单形式的。如果你传递一个&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">string</span></tt>&nbsp;而不是一个<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">dict</span></tt>&nbsp;，那么数据会被直接发布出去。</p>
+<p style="line-height:1.4em">例如，Github API v3接受编码为JSON的POST/PATCH数据:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="kn" style="color:rgb(0,68,97); font-weight:bold">import</span> <span class="nn" style="color:rgb(0,0,0)">json</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">url</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="s" style="color:rgb(78,154,6)">'https://api.github.com/some/endpoint'</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">payload</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="p" style="color:rgb(0,0,0); font-weight:bold">{</span><span class="s" style="color:rgb(78,154,6)">'some'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">:</span> <span class="s" style="color:rgb(78,154,6)">'data'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">}</span>
+
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="n" style="color:rgb(0,0,0)">requests</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">post</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="n" style="color:rgb(0,0,0)">url</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">,</span> <span class="n" style="color:rgb(0,0,0)">data</span><span class="o" style="color:rgb(88,40,0)">=</span><span class="n" style="color:rgb(0,0,0)">json</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">dumps</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="n" style="color:rgb(0,0,0)">payload</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">))</span>
+</pre>
+</div>
+</div>
+</div>
+<div class="section" id="post-multipart-encoded" style="color:rgb(62,67,73); font-family:'goudy old style','minion pro','bell mt',Georgia,'Hiragino Mincho Pro'; font-size:17px">
+<h2 style="font-family:Garamond,Georgia,serif; font-weight:normal; margin:30px 0px 10px; padding:0px; font-size:31px">
+POST一个多部分编码(Multipart-Encoded)的文件<a target="_blank" class="headerlink" href="http://cn.python-requests.org/en/latest/user/quickstart.html#post-multipart-encoded" title="Permalink to this headline" style="color:rgb(221,221,221); text-decoration:none; visibility:hidden; padding:0px 4px"></a></h2>
+<p style="line-height:1.4em">Requests使得上传多部分编码文件变得很简单:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">url</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="s" style="color:rgb(78,154,6)">'http://httpbin.org/post'</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">files</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="p" style="color:rgb(0,0,0); font-weight:bold">{</span><span class="s" style="color:rgb(78,154,6)">'file'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">:</span> <span class="nb" style="color:rgb(0,68,97)">open</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="s" style="color:rgb(78,154,6)">'report.xls'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">,</span> <span class="s" style="color:rgb(78,154,6)">'rb'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)}</span>
+
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="n" style="color:rgb(0,0,0)">requests</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">post</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="n" style="color:rgb(0,0,0)">url</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">,</span> <span class="n" style="color:rgb(0,0,0)">files</span><span class="o" style="color:rgb(88,40,0)">=</span><span class="n" style="color:rgb(0,0,0)">files</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">text</span>
+<span class="go" style="color:rgb(136,136,136)">{</span>
+<span class="go" style="color:rgb(136,136,136)">  ...</span>
+<span class="go" style="color:rgb(136,136,136)">  &quot;files&quot;: {</span>
+<span class="go" style="color:rgb(136,136,136)">    &quot;file&quot;: &quot;&lt;censored...binary...data&gt;&quot;</span>
+<span class="go" style="color:rgb(136,136,136)">  },</span>
+<span class="go" style="color:rgb(136,136,136)">  ...</span>
+<span class="go" style="color:rgb(136,136,136)">}</span>
+</pre>
+</div>
+</div>
+<p style="line-height:1.4em">你可以显式地设置文件名:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">url</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="s" style="color:rgb(78,154,6)">'http://httpbin.org/post'</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">files</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="p" style="color:rgb(0,0,0); font-weight:bold">{</span><span class="s" style="color:rgb(78,154,6)">'file'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">:</span> <span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="s" style="color:rgb(78,154,6)">'report.xls'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">,</span> <span class="nb" style="color:rgb(0,68,97)">open</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="s" style="color:rgb(78,154,6)">'report.xls'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">,</span> <span class="s" style="color:rgb(78,154,6)">'rb'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">))}</span>
+
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="n" style="color:rgb(0,0,0)">requests</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">post</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="n" style="color:rgb(0,0,0)">url</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">,</span> <span class="n" style="color:rgb(0,0,0)">files</span><span class="o" style="color:rgb(88,40,0)">=</span><span class="n" style="color:rgb(0,0,0)">files</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">text</span>
+<span class="go" style="color:rgb(136,136,136)">{</span>
+<span class="go" style="color:rgb(136,136,136)">  ...</span>
+<span class="go" style="color:rgb(136,136,136)">  &quot;files&quot;: {</span>
+<span class="go" style="color:rgb(136,136,136)">    &quot;file&quot;: &quot;&lt;censored...binary...data&gt;&quot;</span>
+<span class="go" style="color:rgb(136,136,136)">  },</span>
+<span class="go" style="color:rgb(136,136,136)">  ...</span>
+<span class="go" style="color:rgb(136,136,136)">}</span>
+</pre>
+</div>
+</div>
+<p style="line-height:1.4em">如果你想，你也可以发送作为文件来接收的字符串:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">url</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="s" style="color:rgb(78,154,6)">'http://httpbin.org/post'</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">files</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="p" style="color:rgb(0,0,0); font-weight:bold">{</span><span class="s" style="color:rgb(78,154,6)">'file'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">:</span> <span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="s" style="color:rgb(78,154,6)">'report.csv'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">,</span> <span class="s" style="color:rgb(78,154,6)">'some,data,to,send</span><span class="se" style="color:rgb(78,154,6)">\n</span><span class="s" style="color:rgb(78,154,6)">another,row,to,send</span><span class="se" style="color:rgb(78,154,6)">\n</span><span class="s" style="color:rgb(78,154,6)">'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)}</span>
+
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="n" style="color:rgb(0,0,0)">requests</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">post</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="n" style="color:rgb(0,0,0)">url</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">,</span> <span class="n" style="color:rgb(0,0,0)">files</span><span class="o" style="color:rgb(88,40,0)">=</span><span class="n" style="color:rgb(0,0,0)">files</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">text</span>
+<span class="go" style="color:rgb(136,136,136)">{</span>
+<span class="go" style="color:rgb(136,136,136)">  ...</span>
+<span class="go" style="color:rgb(136,136,136)">  &quot;files&quot;: {</span>
+<span class="go" style="color:rgb(136,136,136)">    &quot;file&quot;: &quot;some,data,to,send\\nanother,row,to,send\\n&quot;</span>
+<span class="go" style="color:rgb(136,136,136)">  },</span>
+<span class="go" style="color:rgb(136,136,136)">  ...</span>
+<span class="go" style="color:rgb(136,136,136)">}</span>
+</pre>
+</div>
+</div>
+</div>
+<div class="section" id="id7" style="color:rgb(62,67,73); font-family:'goudy old style','minion pro','bell mt',Georgia,'Hiragino Mincho Pro'; font-size:17px">
+<h2 style="font-family:Garamond,Georgia,serif; font-weight:normal; margin:30px 0px 10px; padding:0px; font-size:31px">
+响应状态码<a target="_blank" class="headerlink" href="http://cn.python-requests.org/en/latest/user/quickstart.html#id7" title="Permalink to this headline" style="color:rgb(221,221,221); text-decoration:none; visibility:hidden; padding:0px 4px"></a></h2>
+<p style="line-height:1.4em">我们可以检测响应状态码:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="n" style="color:rgb(0,0,0)">requests</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">get</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="s" style="color:rgb(78,154,6)">'http://httpbin.org/get'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">status_code</span>
+<span class="go" style="color:rgb(136,136,136)">200</span>
+</pre>
+</div>
+</div>
+<p style="line-height:1.4em">为方便引用，Requests还附带了一个内置的状态码查询对象:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">status_code</span> <span class="o" style="color:rgb(88,40,0)">==</span> <span class="n" style="color:rgb(0,0,0)">requests</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">codes</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">ok</span>
+<span class="go" style="color:rgb(136,136,136)">True</span>
+</pre>
+</div>
+</div>
+<p style="line-height:1.4em">如果发送了一个失败请求(非200响应)，我们可以通过&nbsp;<tt class="xref py py-class docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(251,251,251); color:rgb(34,34,34); font-weight:bold; border-bottom-width:1px; border-bottom-style:solid; border-bottom-color:white"><span class="pre">Response.raise_for_status()</span></tt>&nbsp;来抛出异常:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">bad_r</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="n" style="color:rgb(0,0,0)">requests</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">get</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="s" style="color:rgb(78,154,6)">'http://httpbin.org/status/404'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">bad_r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">status_code</span>
+<span class="go" style="color:rgb(136,136,136)">404</span>
+
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">bad_r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">raise_for_status</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">()</span>
+<span class="gt" style="color:rgb(164,0,0); font-weight:bold">Traceback (most recent call last):</span>
+  File <span class="nb" style="color:rgb(0,68,97)">&quot;requests/models.py&quot;</span>, line <span class="m" style="color:rgb(153,0,0)">832</span>, in <span class="n" style="color:rgb(0,0,0)">raise_for_status</span>
+    <span class="k" style="color:rgb(0,68,97); font-weight:bold">raise</span> <span class="n" style="color:rgb(0,0,0)">http_error</span>
+<span class="gr" style="color:rgb(239,41,41)">requests.exceptions.HTTPError</span>: <span class="n" style="color:rgb(0,0,0)">404 Client Error</span>
+</pre>
+</div>
+</div>
+<p style="line-height:1.4em">但是，由于我们的例子中&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">r</span></tt>&nbsp;的&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">status_code</span></tt>&nbsp;是&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">200</span></tt>&nbsp;，当我们调用&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">raise_for_status()</span></tt>&nbsp;时，得到的是:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">raise_for_status</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">()</span>
+<span class="go" style="color:rgb(136,136,136)">None</span>
+</pre>
+</div>
+</div>
+<p style="line-height:1.4em">一切都挺和谐哈。</p>
+</div>
+<div class="section" id="id8" style="color:rgb(62,67,73); font-family:'goudy old style','minion pro','bell mt',Georgia,'Hiragino Mincho Pro'; font-size:17px">
+<h2 style="font-family:Garamond,Georgia,serif; font-weight:normal; margin:30px 0px 10px; padding:0px; font-size:31px">
+响应头<a target="_blank" class="headerlink" href="http://cn.python-requests.org/en/latest/user/quickstart.html#id8" title="Permalink to this headline" style="color:rgb(221,221,221); text-decoration:none; visibility:hidden; padding:0px 4px"></a></h2>
+<p style="line-height:1.4em">我们可以查看以一个Python字典形式展示的服务器响应头:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">headers</span>
+<span class="go" style="color:rgb(136,136,136)">{</span>
+<span class="go" style="color:rgb(136,136,136)">    'status': '200 OK',</span>
+<span class="go" style="color:rgb(136,136,136)">    'content-encoding': 'gzip',</span>
+<span class="go" style="color:rgb(136,136,136)">    'transfer-encoding': 'chunked',</span>
+<span class="go" style="color:rgb(136,136,136)">    'connection': 'close',</span>
+<span class="go" style="color:rgb(136,136,136)">    'server': 'nginx/1.0.4',</span>
+<span class="go" style="color:rgb(136,136,136)">    'x-runtime': '148ms',</span>
+<span class="go" style="color:rgb(136,136,136)">    'etag': '&quot;e1ca502697e5c9317743dc078f67693f&quot;',</span>
+<span class="go" style="color:rgb(136,136,136)">    'content-type': 'application/json; charset=utf-8'</span>
+<span class="go" style="color:rgb(136,136,136)">}</span>
+</pre>
+</div>
+</div>
+<p style="line-height:1.4em">但是这个字典比较特殊：它是仅为HTTP头部而生的。根据&nbsp;<a target="_blank" class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html" style="color:rgb(0,75,107); text-decoration:none; border-bottom-width:1px; border-bottom-style:dotted; border-bottom-color:rgb(0,75,107)">RFC
+ 2616</a>&nbsp;， HTTP头部是大小写不敏感的。</p>
+<p style="line-height:1.4em">因此，我们可以使用任意大写形式来访问这些响应头字段:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">headers</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">[</span><span class="s" style="color:rgb(78,154,6)">'Content-Type'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">]</span>
+<span class="go" style="color:rgb(136,136,136)">'application/json; charset=utf-8'</span>
+
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">headers</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">get</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="s" style="color:rgb(78,154,6)">'content-type'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+<span class="go" style="color:rgb(136,136,136)">'application/json; charset=utf-8'</span>
+</pre>
+</div>
+</div>
+<p style="line-height:1.4em">如果某个响应头字段不存在，那么它的默认&#20540;为&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">None</span></tt></p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">headers</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">[</span><span class="s" style="color:rgb(78,154,6)">'X-Random'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">]</span>
+<span class="go" style="color:rgb(136,136,136)">None</span>
+</pre>
+</div>
+</div>
+</div>
+<div class="section" id="cookies" style="color:rgb(62,67,73); font-family:'goudy old style','minion pro','bell mt',Georgia,'Hiragino Mincho Pro'; font-size:17px">
+<h2 style="font-family:Garamond,Georgia,serif; font-weight:normal; margin:30px 0px 10px; padding:0px; font-size:31px">
+Cookies<a target="_blank" class="headerlink" href="http://cn.python-requests.org/en/latest/user/quickstart.html#cookies" title="Permalink to this headline" style="color:rgb(221,221,221); text-decoration:none; visibility:hidden; padding:0px 4px"></a></h2>
+<p style="line-height:1.4em">如果某个响应中包含一些Cookie，你可以快速访问它们:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">url</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="s" style="color:rgb(78,154,6)">'http://example.com/some/cookie/setting/url'</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="n" style="color:rgb(0,0,0)">requests</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">get</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="n" style="color:rgb(0,0,0)">url</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">cookies</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">[</span><span class="s" style="color:rgb(78,154,6)">'example_cookie_name'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">]</span>
+<span class="go" style="color:rgb(136,136,136)">'example_cookie_value'</span>
+</pre>
+</div>
+</div>
+<p style="line-height:1.4em">要想发送你的cookies到服务器，可以使用&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">cookies</span></tt>&nbsp;参数:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">url</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="s" style="color:rgb(78,154,6)">'http://httpbin.org/cookies'</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">cookies</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="nb" style="color:rgb(0,68,97)">dict</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="n" style="color:rgb(0,0,0)">cookies_are</span><span class="o" style="color:rgb(88,40,0)">=</span><span class="s" style="color:rgb(78,154,6)">'working'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="n" style="color:rgb(0,0,0)">requests</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">get</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="n" style="color:rgb(0,0,0)">url</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">,</span> <span class="n" style="color:rgb(0,0,0)">cookies</span><span class="o" style="color:rgb(88,40,0)">=</span><span class="n" style="color:rgb(0,0,0)">cookies</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">text</span>
+<span class="go" style="color:rgb(136,136,136)">'{&quot;cookies&quot;: {&quot;cookies_are&quot;: &quot;working&quot;}}'</span>
+</pre>
+</div>
+</div>
+</div>
+<div class="section" id="id9" style="color:rgb(62,67,73); font-family:'goudy old style','minion pro','bell mt',Georgia,'Hiragino Mincho Pro'; font-size:17px">
+<h2 style="font-family:Garamond,Georgia,serif; font-weight:normal; margin:30px 0px 10px; padding:0px; font-size:31px">
+重定向与请求历史<a target="_blank" class="headerlink" href="http://cn.python-requests.org/en/latest/user/quickstart.html#id9" title="Permalink to this headline" style="color:rgb(221,221,221); text-decoration:none; visibility:hidden; padding:0px 4px"></a></h2>
+<p style="line-height:1.4em">使用GET或OPTIONS时，Requests会自动处理位置重定向。</p>
+<p style="line-height:1.4em">Github将所有的HTTP请求重定向到HTTPS。可以使用响应对象的&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">history</span></tt>&nbsp;方法来追踪重定向。
+ 我们来看看Github做了什么:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="n" style="color:rgb(0,0,0)">requests</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">get</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="s" style="color:rgb(78,154,6)">'http://github.com'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">url</span>
+<span class="go" style="color:rgb(136,136,136)">'https://github.com/'</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">status_code</span>
+<span class="go" style="color:rgb(136,136,136)">200</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">history</span>
+<span class="go" style="color:rgb(136,136,136)">[&lt;Response [301]&gt;]</span>
+</pre>
+</div>
+</div>
+<p style="line-height:1.4em"><tt class="xref py py-class docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(251,251,251); color:rgb(34,34,34); font-weight:bold; border-bottom-width:1px; border-bottom-style:solid; border-bottom-color:white"><span class="pre">Response.history</span></tt>&nbsp;是一个:class:<cite>Request</cite>&nbsp;对象的列表，为了完成请求而创建了这些对象。这个对象列表按照从最老到最近的请求进行排序。</p>
+<p style="line-height:1.4em">如果你使用的是GET或OPTIONS，那么你可以通过&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">allow_redirects</span></tt>&nbsp;参数禁用重定向处理:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="n" style="color:rgb(0,0,0)">requests</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">get</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="s" style="color:rgb(78,154,6)">'http://github.com'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">,</span> <span class="n" style="color:rgb(0,0,0)">allow_redirects</span><span class="o" style="color:rgb(88,40,0)">=</span><span class="bp" style="color:rgb(52,101,164)">False</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">status_code</span>
+<span class="go" style="color:rgb(136,136,136)">301</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">history</span>
+<span class="go" style="color:rgb(136,136,136)">[]</span>
+</pre>
+</div>
+</div>
+<p style="line-height:1.4em">如果你使用的是POST，PUT，PATCH，DELETE或HEAD，你也可以启用重定向:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span> <span class="o" style="color:rgb(88,40,0)">=</span> <span class="n" style="color:rgb(0,0,0)">requests</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">post</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="s" style="color:rgb(78,154,6)">'http://github.com'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">,</span> <span class="n" style="color:rgb(0,0,0)">allow_redirects</span><span class="o" style="color:rgb(88,40,0)">=</span><span class="bp" style="color:rgb(52,101,164)">True</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">url</span>
+<span class="go" style="color:rgb(136,136,136)">'https://github.com/'</span>
+<span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">r</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">history</span>
+<span class="go" style="color:rgb(136,136,136)">[&lt;Response [301]&gt;]</span>
+</pre>
+</div>
+</div>
+</div>
+<div class="section" id="id10" style="color:rgb(62,67,73); font-family:'goudy old style','minion pro','bell mt',Georgia,'Hiragino Mincho Pro'; font-size:17px">
+<h2 style="font-family:Garamond,Georgia,serif; font-weight:normal; margin:30px 0px 10px; padding:0px; font-size:31px">
+超时<a target="_blank" class="headerlink" href="http://cn.python-requests.org/en/latest/user/quickstart.html#id10" title="Permalink to this headline" style="color:rgb(221,221,221); text-decoration:none; visibility:hidden; padding:0px 4px"></a></h2>
+<p style="line-height:1.4em">你可以告诉requests在经过以&nbsp;<tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">timeout</span></tt>&nbsp;参数设定的秒数时间之后停止等待响应:</p>
+<div class="highlight-python">
+<div class="highlight">
+<pre style="overflow-x:auto; overflow-y:hidden; font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(238,238,238); padding:7px 30px; margin:15px -30px; line-height:1.3em"><span class="gp" style="color:rgb(116,83,52)">&gt;&gt;&gt; </span><span class="n" style="color:rgb(0,0,0)">requests</span><span class="o" style="color:rgb(88,40,0)">.</span><span class="n" style="color:rgb(0,0,0)">get</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">(</span><span class="s" style="color:rgb(78,154,6)">'http://github.com'</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">,</span> <span class="n" style="color:rgb(0,0,0)">timeout</span><span class="o" style="color:rgb(88,40,0)">=</span><span class="mf" style="color:rgb(153,0,0)">0.001</span><span class="p" style="color:rgb(0,0,0); font-weight:bold">)</span>
+<span class="gt" style="color:rgb(164,0,0); font-weight:bold">Traceback (most recent call last):</span>
+  File <span class="nb" style="color:rgb(0,68,97)">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m" style="color:rgb(153,0,0)">1</span>, in <span class="n" style="color:rgb(0,0,0)">&lt;module&gt;</span>
+<span class="gr" style="color:rgb(239,41,41)">requests.exceptions.Timeout</span>: <span class="n" style="color:rgb(0,0,0)">HTTPConnectionPool(host='github.com', port=80): Request timed out. (timeout=0.001)</span>
+</pre>
+</div>
+</div>
+<div class="admonition- admonition" style="margin:20px -30px; padding:10px 30px; background-color:rgb(250,250,250); border-top-width:1px; border-top-style:solid; border-top-color:rgb(204,204,204); border-bottom-width:1px; border-bottom-style:solid; border-bottom-color:rgb(204,204,204)">
+<p class="first admonition-title" style="margin-top:0px; margin-bottom:10px; display:inline; line-height:1; font-family:Garamond,Georgia,serif; font-size:24px; padding-top:0px; padding-bottom:0px">
+注:</p>
+<p class="last" style="line-height:1.4em; margin-bottom:0px"><tt class="docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(236,240,243); color:rgb(34,34,34)"><span class="pre">timeout</span></tt>&nbsp;仅对连接过程有效，与响应体的下载无关。</p>
+</div>
+</div>
+<div class="section" id="id11" style="color:rgb(62,67,73); font-family:'goudy old style','minion pro','bell mt',Georgia,'Hiragino Mincho Pro'; font-size:17px">
+<h2 style="font-family:Garamond,Georgia,serif; font-weight:normal; margin:30px 0px 10px; padding:0px; font-size:31px">
+错误与异常<a target="_blank" class="headerlink" href="http://cn.python-requests.org/en/latest/user/quickstart.html#id11" title="Permalink to this headline" style="color:rgb(221,221,221); text-decoration:none; visibility:hidden; padding:0px 4px"></a></h2>
+<p style="line-height:1.4em">遇到网络问题（如：DNS查询失败、拒绝连接等）时，Requests会抛出一个<tt class="xref py py-class docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(251,251,251); color:rgb(34,34,34); font-weight:bold; border-bottom-width:1px; border-bottom-style:solid; border-bottom-color:white"><span class="pre">ConnectionError</span></tt>&nbsp;异常。</p>
+<p style="line-height:1.4em">遇到罕见的无效HTTP响应时，Requests则会抛出一个&nbsp;<tt class="xref py py-class docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(251,251,251); color:rgb(34,34,34); font-weight:bold; border-bottom-width:1px; border-bottom-style:solid; border-bottom-color:white"><span class="pre">HTTPError</span></tt>&nbsp;异常。</p>
+<p style="line-height:1.4em">若请求超时，则抛出一个&nbsp;<tt class="xref py py-class docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(251,251,251); color:rgb(34,34,34); font-weight:bold; border-bottom-width:1px; border-bottom-style:solid; border-bottom-color:white"><span class="pre">Timeout</span></tt>&nbsp;异常。</p>
+<p style="line-height:1.4em">若请求超过了设定的最大重定向次数，则会抛出一个&nbsp;<tt class="xref py py-class docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(251,251,251); color:rgb(34,34,34); font-weight:bold; border-bottom-width:1px; border-bottom-style:solid; border-bottom-color:white"><span class="pre">TooManyRedirects</span></tt>&nbsp;异常。</p>
+<p style="line-height:1.4em">所有Requests显式抛出的异常都继承自&nbsp;<tt class="xref py py-class docutils literal" style="font-family:Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; font-size:0.9em; background-color:rgb(251,251,251); color:rgb(34,34,34); font-weight:bold; border-bottom-width:1px; border-bottom-style:solid; border-bottom-color:white"><span class="pre">requests.exceptions.RequestException</span></tt>&nbsp;。</p>
+</div>
+   
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+
+
+
+<div class="bdsharebuttonbox tracking-ad" style="float: right;" data-mod="popu_172">
+<a href="#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"  style="background-position:0 -52px !important"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"style="background-position:0 -104px !important"></a>
+<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"style="background-position:0 -260px !important"></a>
+<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"style="background-position:0 -208px !important"></a>
+<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"style="background-position:0 -1612px !important" ></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<!-- Baidu Button END -->
+
+   <link rel="stylesheet" href="http://static.blog.csdn.net/css/blog_detail.css" />
+
+    
+<!--172.16.140.12-->
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1536434" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+ 
+
+        <div id="digg" ArticleId="21444613">
+            <dl id="btnDigg" class="digg digg_disable">
+               
+                 <dt>顶</dt>
+                <dd>4</dd>
+            </dl>
+            <dl id="btnBury" class="digg digg_disable">
+              
+                  <dt>踩</dt>
+                <dd>0</dd>
+            </dl>
+        </div>
+
+   <ul class="article_next_prev">
+                <li class="prev_article"><span  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian']);location.href='/iloveyin/article/details/21402439';">上一篇</span><a href="/iloveyin/article/details/21402439" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian'])">redhat/Centos rpmforge安装</a></li>
+                <li class="next_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian']);location.href='/iloveyin/article/details/21468641';">下一篇</span><a href="/iloveyin/article/details/21468641" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian'])">Scrapy Callback传递多个参数方式</a></li>
+    </ul>
+
+    <div style="clear:both; height:10px;"></div>
+
+
+        <div class="similar_article"  style="display:none">
+                <h4>我的同类文章</h4>
+                <div class="similar_c"style="margin:20px 0px 0px 0px">
+                    <div class="similar_c_t">
+                                <label class="similar_cur">
+                                    <span  style="cursor:pointer"  onclick="GetCategoryArticles('1144293','iloveyin','foot','21444613');">Python<em>（67）</em></span>
+                                </label>
+                    </div>
+                   
+                    <div class="similar_wrap tracking-ad" data-mod="popu_141"  style="max-height:195px;">
+                        <a href="http://blog.csdn.net" style="display:none">http://blog.csdn.net</a>
+                        <ul class="similar_list fl">                          
+                        </ul>
+
+                        <ul class="similar_list fr">                           
+                        </ul>
+                    </div>
+                </div>
+            </div>    
+    <script  type="text/javascript">
+        $(function () {
+            GetCategoryArticles('1144293', 'iloveyin','foot','21444613');
+        });
+    </script>
+      
+</div>
+<div id="suggest"></div>
+         <script  language="javascript" type='text/javascript'>     
+             $(function(){
+                 $.get("/iloveyin/svc/GetSuggestContent/21444613",function(data){
+                     $("#suggest").html(data);
+                 });     
+             });             
+         </script>  
+
+
+<style>
+.blog-ass-articl dd {
+color: #369;
+width: 99%; /*修改行*/
+float: left;
+overflow: hidden;
+font: normal normal 12px/23px "SimSun";
+height: 23px;
+margin: 0;
+padding: 0 0 0 10px;
+margin-right: 30px;
+background: url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;
+}
+</style>
+
+<dl class="blog-ass-articl" id="res-relatived" > 
+    <div class="embody embody_b" id="libkeyparent"  style="display:none">
+            <span class="embody_t">更多资料请参考：</span>
+            <div class="embody_c" id="libkey"></div>
+    </div>
+
+
+     <dt><span>猜你在找</span></dt>    
+
+
+   
+
+
+    <div id="adCollege" style="width: 42%;float: left;"> 
+        <script src="http://csdnimg.cn/jobreco/job_reco.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+            csdn.position.showEdu({
+                sourceType: "blog",
+                searchType: "detail",
+                searchKey: "21444613",
+                username: "",
+                recordcount: "5",
+                containerId: "adCollege" //容器DIV的id。 
+            });
+        </script> 
+    </div>  
+
+    
+     <div id="res"  data-mod="popu_36"  class="tracking-ad" style="width: 42%;float: left;margin-right: 30px;"></div>
+   
+</dl>
+
+
+<script type="text/javascript">
+    $(function () {
+        setTimeout(function () {
+            var searchtitletags = 'Python Requests快速入门' + ',' + $("#tags").html();
+            searchService({
+                index: 'blog',
+                query: searchtitletags,
+                from: 5,
+                size: 5,
+                appendTo: '#res',
+                url: 'recommend',
+                his: 2,
+                client: "blog_cf_enhance",
+                tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+            });
+        }, 500);
+    });    
+
+ </script>  
+
+    <div id="ad_cen">        
+<!-- 广告位开始 -->
+<ins data-revive-zoneid="71" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins>
+<!-- 广告位结束 -->    </div>  
+
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list">
+    </div>
+    <div id="comment_bar">
+    </div>
+    <div id="comment_form">
+    </div>
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+<script type="text/javascript">
+    var fileName = '21444613';
+    var commentscount = 5;
+    var islock = false
+</script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/comment.js"></script>
+    <div id="ad_bot">
+    </div>
+<div id="report_dialog">
+</div>
+
+<div id="d-top"  style="bottom:60px;">
+        <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="display:none;">
+            <img src="http://static.blog.csdn.net/images/blog-icon-reply.png" alt="快速回复">
+        </a>    
+
+    <a id="d-top-a" class="btn btn-top backtop"  style="display: none;" title="返回顶部" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_huidaodingbu'])" style="">         
+         <img src="http://static.blog.csdn.net/images/top.png" alt="TOP">
+    </a>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);    
+    });
+  
+</script>
+<style type="text/css">
+    .tag_list
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #D7CBC1;
+        color: #000000;
+        font-size: 12px;
+        line-height: 20px;
+        list-style: none outside none;
+        margin: 10px 2% 0 1%;
+        padding: 1px;
+    }
+    .tag_list h5
+    {
+        background: none repeat scroll 0 0 #E0DBD3;
+        color: #47381C;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .tag_list h5 a
+    {
+        color: #47381C;
+    }
+    .classify
+    {
+        margin: 10px 0;
+        padding: 4px 12px 8px;
+    }
+    .classify a
+    {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+</style>
+
+
+<div class="tag_list" style="display:none"></div>
+  <script  language="javascript" type='text/javascript'>     
+      $(function(){
+              setTimeout(function(){
+                  $.get("/iloveyin/svc/GetTagContent",function(data){
+                      $(".tag_list").html(data).show();
+                  });     
+              });
+          },500);                       
+ </script> 
+
+
+<div id="pop_win" style="display:none ;position: absolute; z-index: 10000; border: 1px solid rgb(220, 220, 220); top: 222.5px; left: 630px; opacity: 1; background: none 0px 0px repeat scroll rgb(255, 255, 255);">
+    
+</div>
+<div id="popup_mask"></div>
+<style>
+    #popup_mask
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 9999;
+        left: 0px;
+        top: 0px;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        display: none;
+    }
+
+</style>
+
+
+
+
+<script type="text/javascript">
+    $(function(){
+        setTimeout(function(){
+            $(".comment_body:contains('回复')").each(function(index,item){
+                var u=$(this).text().split('：')[0].toString().replace("回复","")
+                var thisComment=$(this);
+                if(u)
+                {
+                    $.getJSON("https://passport.csdn.net/get/nick?callback=?", {users: u}, function(a) {
+                        if(a!=null&&a.data!=null&&a.data.length>0)
+                        {
+                            nick=a.data[0].n; 
+                            if(u!=nick)
+                            {
+                                thisComment.text(thisComment.text().replace(u,nick));  
+                            }
+                        }       
+                    });  
+                }
+            });         
+
+        },200);  
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },5000);
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },10000);
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },15000);
+        
+        setTimeout(function(){
+            $("a img[src='http://js.tongji.linezing.com/stats.gif']").parent().css({"position":"absolute","left":"50%"});
+        },300);
+    });
+
+    function loginbox(){
+        var $logpop=$("#pop_win");
+        $logpop.html('<iframe src="https://passport.csdn.net/account/loginbox?service=http://static.blog.csdn.net/callback.htm" frameborder="0" height="600" width="400" scrolling="no"></iframe>');
+
+        $('#popup_mask').css({
+            opacity: 0.5,
+            width: $( document ).width() + 'px',
+            height:  $( document ).height() + 'px'
+        });
+        $('#popup_mask').css("display","block");
+ 
+        $logpop.css( {
+            top: ($( window ).height() - $logpop.height())/ 2  + $( window 
+       ).scrollTop() + 'px',
+            left:($( window ).width() - $logpop.width())/ 2
+        } );
+ 
+        setTimeout( function () {
+            $logpop.show();
+            $logpop.css( {
+                opacity: 1
+            } );
+        }, 200 );
+ 
+        $('#popup_mask').unbind("click");
+        $('#popup_mask').bind("click", function(){
+            $('#popup_mask').hide();
+            var $clopop = $("#pop_win");
+            $("#common_ask_div_sc").css("display","none");
+            $clopop.css( {
+                opacity: 0
+            } );
+            setTimeout( function () {
+                $clopop.hide();
+            }, 350 );
+            return false;
+        });
+    }   
+
+</script>
+ <script language="javascript" type="text/javascript" src="http://ads.csdn.net/js/async_new.js"></script>      
+
+
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+                   
+           <div id="side">
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/iloveyin" target="_blank">
+    <img src="http://avatar.csdn.net/A/E/5/1_iloveyin.jpg" title="访问我的空间" style="max-width:90%"/>
+    </a>
+    <br />
+    <span><a href="http://my.csdn.net/iloveyin" class="user_name" target="_blank">iloveyin</a></span>
+</div>
+<div class="interact">
+
+    <a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]"></a>
+
+ <a href="javascript:void(0);" class="letter"  title="[发私信]" onclick="window.open('http://msg.csdn.net/letters/model?receiver=iloveyin','_blank','height=350,width=700');_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_sixin'])"></a>  
+</div>
+<div id="blog_medal">
+                <div id="bms_box">
+                                            <a  target="_blank">
+                                                    <img src="http://c.csdnimg.cn/jifen/images/xunzhang/xunzhang/chizhiyiheng.png" onmouseover="m_over_m(this,4)" onmouseout="m_out_m()" alt="4" >
+                                            </a>
+               </div>
+</div>
+<ul id="blog_rank">
+    <li>访问：<span>607174次</span></li>
+    <li>积分：<span>7486</span> </li>    
+    <li >等级： <span style="position:relative;display:inline-block;z-index:1" >
+            <img src="http://c.csdnimg.cn/jifen/images/xunzhang/jianzhang/blog6.png" alt="" style="vertical-align: middle;" id="leveImg">
+            <div id="smallTittle" style=" position: absolute;  left: -24px;  top: 25px;  text-align: center;  width: 101px;  height: 32px;  background-color: #fff;  line-height: 32px;  border: 2px #DDDDDD solid;  box-shadow: 0px 2px 2px rgba (0,0,0,0.1);  display: none;   z-index: 999;">
+            <div style="left: 42%;  top: -8px;  position: absolute;  width: 0;  height: 0;  border-left: 10px solid transparent;  border-right: 10px solid transparent;  border-bottom: 8px solid #EAEAEA;"></div>
+            积分：7486 </div>
+        </span>  </li>
+    <li>排名：<span>第1635名</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>201篇</span></li>
+    <li>转载：<span>149篇</span></li>
+    <li>译文：<span>0篇</span></li>
+    <li>评论：<span>39条</span></li>
+</ul>
+</ul>
+</div>
+
+
+<div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input id="inputSearch" type="text" class="blogsearch" title="请输入关键字" /></span>
+        <input id="btnSubmit" type="button" value="搜索" title="search in blog" />
+        <input type="hidden" name="q" id="inputQ" />
+        <input type="hidden" name="t" value="blog" />
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {           
+            search();
+        });
+
+        $("#frmSearch").submit(function () {
+            search();
+            return false;
+        });
+
+        function search()
+        {
+            var url = "http://so.csdn.net/so/search/s.do?q=" + encodeURIComponent($("#inputSearch").val()) + "&u=" + username + "&t=blog";
+            window.location.href = url;
+        }   
+    });
+</script><div id="panel_Category" class="panel">
+<ul class="panel_head"><span>文章分类</span></ul>
+<ul class="panel_body">    
+                 <li>
+                    <a href="/iloveyin/article/category/908690" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">ROR</a><span>(8)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/911791" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Linux</a><span>(45)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/912738" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Html元素分析</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/913724" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Java</a><span>(38)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/929317" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">数据库</a><span>(26)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/931331" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Lucene</a><span>(4)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/942852" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">NOSQL</a><span>(10)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/953324" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">系统管理</a><span>(18)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/956934" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">缓存</a><span>(3)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/960255" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">杂乱</a><span>(7)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/1083543" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">搜索</a><span>(6)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/1113282" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">数据结构</a><span>(14)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/1114365" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Solr</a><span>(3)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/1115241" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">面试笔试</a><span>(36)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/1121164" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">手机</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/1129210" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Redis</a><span>(5)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/1130542" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">C++</a><span>(9)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/1144293" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Python</a><span>(67)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/1156197" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">互联网经验</a><span>(3)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/1158232" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">heritrix</a><span>(3)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/1163609" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">hibernate</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/1164644" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">hadoop</a><span>(14)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/1169484" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">ant</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/1184323" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">DevOps</a><span>(5)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/1190627" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Puppet</a><span>(5)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/1191237" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">运维</a><span>(16)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/1220513" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Django</a><span>(19)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/1246119" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">算法</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/1260247" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">分布式系统架构</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/1266993" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">网络编程</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/1304330" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">rabbitmq</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/1356938" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">MongoDB</a><span>(3)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/1578437" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/2208733" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">摄影技巧</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/2215471" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">多媒体</a><span>(11)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/2355593" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">版本管理</a><span>(6)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/2667619" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Docker</a><span>(4)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/2682245" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Storm</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/2726217" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">scrapy</a><span>(7)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/5597631" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">opencv</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/5668351" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">ansible</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/5749971" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">git</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/5784297" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">架构经验</a><span>(7)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/5801391" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">elasticsearch</a><span>(5)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/5828105" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">ecshop</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/5996099" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">node.js</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/iloveyin/article/category/6159721" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">spring</a><span>(2)</span>
+                </li>
+</ul>
+</div><div id="panel_Archive" class="panel">
+<ul class="panel_head"><span>文章存档</span></ul>
+<ul class="panel_body">
+<div id="archive_list">
+<!--归档统计-->
+<li><a href="/iloveyin/article/month/2016/04">2016年04月</a><span>(1)</span></li><li><a href="/iloveyin/article/month/2016/03">2016年03月</a><span>(6)</span></li><li><a href="/iloveyin/article/month/2016/02">2016年02月</a><span>(4)</span></li><li><a href="/iloveyin/article/month/2015/12">2015年12月</a><span>(12)</span></li><li><a href="/iloveyin/article/month/2015/11">2015年11月</a><span>(3)</span></li><li><a href="/iloveyin/article/month/2015/10">2015年10月</a><span>(4)</span></li><li><a href="/iloveyin/article/month/2015/09">2015年09月</a><span>(21)</span></li><li><a href="/iloveyin/article/month/2015/08">2015年08月</a><span>(2)</span></li><li><a href="/iloveyin/article/month/2015/07">2015年07月</a><span>(2)</span></li><li><a href="/iloveyin/article/month/2015/06">2015年06月</a><span>(5)</span></li><li><a href="/iloveyin/article/month/2015/05">2015年05月</a><span>(3)</span></li><li><a href="/iloveyin/article/month/2015/04">2015年04月</a><span>(9)</span></li><li><a href="/iloveyin/article/month/2015/03">2015年03月</a><span>(6)</span></li><li><a href="/iloveyin/article/month/2015/01">2015年01月</a><span>(7)</span></li><li><a href="/iloveyin/article/month/2014/12">2014年12月</a><span>(3)</span></li><li><a href="/iloveyin/article/month/2014/11">2014年11月</a><span>(7)</span></li><li><a href="/iloveyin/article/month/2014/10">2014年10月</a><span>(9)</span></li><li><a href="/iloveyin/article/month/2014/09">2014年09月</a><span>(2)</span></li><li><a href="/iloveyin/article/month/2014/08">2014年08月</a><span>(5)</span></li><li><a href="/iloveyin/article/month/2014/07">2014年07月</a><span>(2)</span></li><li><a href="/iloveyin/article/month/2014/06">2014年06月</a><span>(7)</span></li><li><a href="/iloveyin/article/month/2014/05">2014年05月</a><span>(8)</span></li><li><a href="/iloveyin/article/month/2014/04">2014年04月</a><span>(7)</span></li><li><a href="/iloveyin/article/month/2014/03">2014年03月</a><span>(4)</span></li><li><a href="/iloveyin/article/month/2014/02">2014年02月</a><span>(5)</span></li><li><a href="/iloveyin/article/month/2014/01">2014年01月</a><span>(1)</span></li><li><a href="/iloveyin/article/month/2013/12">2013年12月</a><span>(3)</span></li><li><a href="/iloveyin/article/month/2013/11">2013年11月</a><span>(4)</span></li><li><a href="/iloveyin/article/month/2013/10">2013年10月</a><span>(6)</span></li><li><a href="/iloveyin/article/month/2013/09">2013年09月</a><span>(7)</span></li><li><a href="/iloveyin/article/month/2013/08">2013年08月</a><span>(4)</span></li><li><a href="/iloveyin/article/month/2013/07">2013年07月</a><span>(1)</span></li><li><a href="/iloveyin/article/month/2013/06">2013年06月</a><span>(3)</span></li><li><a href="/iloveyin/article/month/2013/05">2013年05月</a><span>(8)</span></li><li><a href="/iloveyin/article/month/2013/03">2013年03月</a><span>(1)</span></li><li><a href="/iloveyin/article/month/2013/02">2013年02月</a><span>(1)</span></li><li><a href="/iloveyin/article/month/2013/01">2013年01月</a><span>(3)</span></li><li><a href="/iloveyin/article/month/2012/12">2012年12月</a><span>(3)</span></li><li><a href="/iloveyin/article/month/2012/11">2012年11月</a><span>(3)</span></li><li><a href="/iloveyin/article/month/2012/10">2012年10月</a><span>(14)</span></li><li><a href="/iloveyin/article/month/2012/09">2012年09月</a><span>(10)</span></li><li><a href="/iloveyin/article/month/2012/08">2012年08月</a><span>(16)</span></li><li><a href="/iloveyin/article/month/2012/07">2012年07月</a><span>(15)</span></li><li><a href="/iloveyin/article/month/2012/06">2012年06月</a><span>(5)</span></li><li><a href="/iloveyin/article/month/2012/05">2012年05月</a><span>(19)</span></li><li><a href="/iloveyin/article/month/2012/04">2012年04月</a><span>(26)</span></li><li><a href="/iloveyin/article/month/2012/03">2012年03月</a><span>(12)</span></li><li><a href="/iloveyin/article/month/2012/01">2012年01月</a><span>(1)</span></li><li><a href="/iloveyin/article/month/2011/12">2011年12月</a><span>(15)</span></li><li><a href="/iloveyin/article/month/2011/11">2011年11月</a><span>(13)</span></li><li><a href="/iloveyin/article/month/2011/10">2011年10月</a><span>(12)</span></li><li><a href="/iloveyin/article/month/2011/09">2011年09月</a><span>(1)</span></li>
+</div>
+</ul>
+</div>
+<div id="hotarticls" class="panel">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="/iloveyin/article/details/21444613" title="Python Requests快速入门">Python Requests快速入门</a><span>(73070)</span>
+</li>
+<li>
+<a href="/iloveyin/article/details/38512793" title="Linux netstat命令详解">Linux netstat命令详解</a><span>(27303)</span>
+</li>
+<li>
+<a href="/iloveyin/article/details/17097151" title="pip和easy_install使用方式">pip和easy_install使用方式</a><span>(22531)</span>
+</li>
+<li>
+<a href="/iloveyin/article/details/38539933" title="Git merge和git branch 分支与合并">Git merge和git branch 分支与合并</a><span>(17706)</span>
+</li>
+<li>
+<a href="/iloveyin/article/details/8423823" title="Python中urllib2总结">Python中urllib2总结</a><span>(12939)</span>
+</li>
+<li>
+<a href="/iloveyin/article/details/41309679" title="Scrapy系列教程（3）------Spider（爬虫核心，定义链接关系和网页信息抽取）">Scrapy系列教程（3）------Spider（爬虫核心，定义链接关系和网页信息抽取）</a><span>(10589)</span>
+</li>
+<li>
+<a href="/iloveyin/article/details/7067345" title="CentOS下以RPM方式安装MySQL5.5">CentOS下以RPM方式安装MySQL5.5</a><span>(7776)</span>
+</li>
+<li>
+<a href="/iloveyin/article/details/40107345" title="gerrit使用总结">gerrit使用总结</a><span>(7693)</span>
+</li>
+<li>
+<a href="/iloveyin/article/details/45335885" title="python datetime模块详解">python datetime模块详解</a><span>(7480)</span>
+</li>
+<li>
+<a href="/iloveyin/article/details/28909771" title="64位CentOS上编译 Hadoop 2.2.0">64位CentOS上编译 Hadoop 2.2.0</a><span>(7201)</span>
+</li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="/iloveyin/article/details/21444613" title="Python Requests快速入门">Python Requests快速入门</a><span>(5)</span>
+</li>
+<li>
+<a href="/iloveyin/article/details/38512793" title="Linux netstat命令详解">Linux netstat命令详解</a><span>(3)</span>
+</li>
+<li>
+<a href="/iloveyin/article/details/44625369" title="django-pagination分页">django-pagination分页</a><span>(3)</span>
+</li>
+<li>
+<a href="/iloveyin/article/details/41309679" title="Scrapy系列教程（3）------Spider（爬虫核心，定义链接关系和网页信息抽取）">Scrapy系列教程（3）------Spider（爬虫核心，定义链接关系和网页信息抽取）</a><span>(3)</span>
+</li>
+<li>
+<a href="/iloveyin/article/details/7400278" title="JAVA高性能编程">JAVA高性能编程</a><span>(2)</span>
+</li>
+<li>
+<a href="/iloveyin/article/details/7879206" title="matplotlib中文乱码解决方法">matplotlib中文乱码解决方法</a><span>(2)</span>
+</li>
+<li>
+<a href="/iloveyin/article/details/7105181" title="Redis键值设计">Redis键值设计</a><span>(2)</span>
+</li>
+<li>
+<a href="/iloveyin/article/details/38754231" title="Python基础语法">Python基础语法</a><span>(2)</span>
+</li>
+<li>
+<a href="/iloveyin/article/details/8045528" title="百度2013校园招聘笔试题(含自己整理的答案)">百度2013校园招聘笔试题(含自己整理的答案)</a><span>(2)</span>
+</li>
+<li>
+<a href="/iloveyin/article/details/7764310" title="puppet核心资源类型及其常见属性学习笔记">puppet核心资源类型及其常见属性学习笔记</a><span>(1)</span>
+</li>
+</ul>
+</div>
+<div id="homepageArticles" class="panel tracking-ad" data-mod="popu_4">
+<ul class="panel_head"><span>推荐文章</span></ul>
+<ul class="panel_body" id="ad_commend">
+<ul>
+<li><a href="http://blog.csdn.net/baby_hua/article/details/51004405" 
+
+target="_blank">*在iOS9上调用支付宝不回调的问题解决，以及支付宝嵌入的流程梳理</a></li>
+<li><a href="http://blog.csdn.net/erlib/article/details/50994209" 
+target="_blank">*几种软负载均衡策略分析</a></li>
+<li><a href="http://blog.csdn.net/fanyun_01/article/details/50921678" 
+
+target="_blank">*浅谈Storm流式处理框架</a></li>
+<li><a 
+
+href="http://blog.csdn.net/u011116672/article/details/50991618"target="_blank">*阿里2016实习offer五面经验与总结</a></li>
+<li><a href="http://blog.csdn.net/apksafe/article/details/51038646#comments" 
+target="_blank">*Android移动应用开发中常见的经验技巧总结</a></li>
+<li><a href="http://blog.csdn.net/afandaafandaafanda/article/details/51067044" target="_blank">* 关于前端开发的思考</a></li>
+
+</ul></ul>
+</div>
+
+
+<div id="newcomments" class="panel">
+<ul class="panel_head"><span>最新评论</span></ul>
+<ul class="panel_body itemlist">
+    <li>
+   
+         <a href="/iloveyin/article/details/50345503#comments">JVM理论与实践【JVM参数调优】</a>
+    <p style="margin:0px;"><a href="/lipeng_bigdata" class="user_name">lipeng_bigdata</a>:
+不错，有用！
+    </p>
+    </li>
+    <li>
+   
+         <a href="/iloveyin/article/details/7400278#comments">JAVA高性能编程</a>
+    <p style="margin:0px;"><a href="/lipeng_bigdata" class="user_name">lipeng_bigdata</a>:
+收藏了！
+    </p>
+    </li>
+    <li>
+   
+         <a href="/iloveyin/article/details/28264027#comments">Hadoop webHDFS设置和使用说明</a>
+    <p style="margin:0px;"><a href="/u013693144" class="user_name">u013693144</a>:
+vm上安装的hadoop，在电脑上可以通过浏览器浏览hadoop 的web页面，我想把hadoop ...
+    </p>
+    </li>
+    <li>
+   
+         <a href="/iloveyin/article/details/44625369#comments">django-pagination分页</a>
+    <p style="margin:0px;"><a href="/wang1098501555" class="user_name">wang1098501555</a>:
+用是可以用，但是效果太猥琐了，难看
+    </p>
+    </li>
+    <li>
+   
+         <a href="/iloveyin/article/details/44625369#comments">django-pagination分页</a>
+    <p style="margin:0px;"><a href="/u012620582" class="user_name">u012620582</a>:
+一点用都没有啊
+    </p>
+    </li>
+    <li>
+   
+         <a href="/iloveyin/article/details/44625369#comments">django-pagination分页</a>
+    <p style="margin:0px;"><a href="/u012620582" class="user_name">u012620582</a>:
+傻逼了
+    </p>
+    </li>
+    <li>
+   
+         <a href="/iloveyin/article/details/7105181#comments">Redis键值设计</a>
+    <p style="margin:0px;"><a href="/zidan521" class="user_name">zidan521</a>:
+请问作者，login表只有一个userid主键，如果遇到联合主键或者无主键的表，Redis又应该如何...
+    </p>
+    </li>
+    <li>
+   
+         <a href="/iloveyin/article/details/7067345#comments">CentOS下以RPM方式安装MySQL5.5</a>
+    <p style="margin:0px;"><a href="/gzt19881123" class="user_name">gzt19881123</a>:
+下载完成后开始安装： 这一步骤 可以使用 yum install 安装, 这样避免依赖的rpm包没有...
+    </p>
+    </li>
+    <li>
+   
+         <a href="/iloveyin/article/details/44647579#comments">使用xadmin替换django自带的admin后台</a>
+    <p style="margin:0px;"><a href="/the_fire" class="user_name">the_fire</a>:
+你这个是原创？？？？
+    </p>
+    </li>
+    <li>
+   
+         <a href="/iloveyin/article/details/21444613#comments">Python Requests快速入门</a>
+    <p style="margin:0px;"><a href="/qq_29877445" class="user_name">qq_29877445</a>:
+请问第一个通过get方式从url获得网页源代码 但是源代码有丢失的现象怎么办啊 比如优酷指数 里面的...
+    </p>
+    </li>
+</ul>
+</div>
+    </div>
+    <div class="clear">
+    </div>
+ </div>   
+            <div class="clear">
+            </div>
+        </div>
+
+        
+
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/cnick/cnick.js"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/newblog.min.js"></script>
+
+
+<script type="text/javascript" src="http://medal.blog.csdn.net/showblogmedal.ashx?blogid=1153584"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/JavaScript1.js"></script>
+
+    <script type="text/javascript" src="http://passport.csdn.net/content/loginbox/login.js"></script>
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script>
+<script type="text/javascript" src="http://www.csdn.net/ui/scripts/Csdn/counter.js"></script>
+<script type="text/javascript" src="http://ad.csdn.net/scripts/ad-blog.js"></script>
+<script type="text/javascript">
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<span class='tracking-ad' data-mod='popu_167'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a></span>"
+                    + "<span class='tracking-ad' data-mod='popu_170'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a></span>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+
+        $(".bar").show();
+    });
+</script>
+
+
+
+
+    </div>
+      <!--new top-->
+    
+    <script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://c.csdnimg.cn/public/common/toolbar/js/toolbar.js"></script>     <!--new top-->
+   
+    <link href="http://c.csdnimg.cn/comm_ask/css/ask_float_block.css" type="text/css" rel="stylesheet" />
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/wmd.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/showdown.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/prettify.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/apps/ask_float_block.js'></script>
+   
+
+  <div id="a52b5334d" style="width: 1px; height: 1px; display: none;">
+                    <script id="adJs52b5334"></script>
+                    <script>document.getElementById("adJs52b5334").src = "http://ads.csdn.net/js/opt/52b5334.js?t=" + Math.random();</script>
+   </div>
+
+</body>
+</html>   
+ 
